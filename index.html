@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FFF6D3">
+
+<title>Miori Shop 🎀</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   MIORI SHOP
+   Pastel Minimal Cute Theme
+   ========================================================= */
+
+:root {
+    --peach: #FFE3B7;
+    --cream: #FFF6D3;
+    --mint: #B5F3E9;
+    --dusty-pink: #E8B7C8;
+    --rose: #D98FA6;
+    --cocoa: #8F7568;
+    --white: #FFFCF7;
+
+    --pink-light: #FCE5EC;
+    --mint-light: #E8FBF7;
+    --peach-light: #FFF0D8;
+
+    --shadow:
+        0 8px 25px rgba(143,117,104,.10);
+
+    --soft-shadow:
+        0 5px 15px rgba(143,117,104,.08);
+
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Mitr", sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,227,183,.45), transparent 20%),
+        radial-gradient(circle at 90% 20%, rgba(181,243,233,.35), transparent 20%),
+        linear-gradient(135deg, #FFF6D3, #FFF7F1 45%, #FCEBF0);
+    color: var(--cocoa);
+    min-height: 100vh;
+}
+
+/* จุดเล็ก ๆ พื้นหลัง */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .22;
+
+    background-image:
+        radial-gradient(#D98FA6 1px, transparent 1px),
+        radial-gradient(#B5F3E9 1px, transparent 1px);
+
+    background-size: 35px 35px, 55px 55px;
+    background-position: 0 0, 15px 20px;
+    z-index: -1;
+}
+
+button,
+a,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+#app {
+    width: 100%;
+    max-width: 1120px;
+    margin: auto;
+    padding: 22px 18px 45px;
+}
+
+
+/* =========================================================
+   TOP BADGES
+   ========================================================= */
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.badges {
+    display: flex;
+    gap: 8px;
+}
+
+.badge {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    border: 2px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 4px 12px rgba(143,117,104,.12);
+
+    transition: .25s ease;
+}
+
+.badge:hover {
+    transform: translateY(-3px) rotate(-5deg);
+}
+
+.badge:nth-child(1) {
+    background: var(--rose);
+    color: white;
+}
+
+.badge:nth-child(2) {
+    background: var(--peach);
+}
+
+.badge:nth-child(3) {
+    background: var(--mint);
+}
+
+.admin-button {
+    border: 1px solid var(--dusty-pink);
+    background: rgba(255,252,247,.85);
+    color: var(--rose);
+
+    padding: 8px 15px;
+    border-radius: 999px;
+
+    box-shadow: var(--soft-shadow);
+
+    transition: .25s ease;
+}
+
+.admin-button:hover {
+    background: var(--rose);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.main-card {
+    background: rgba(255,252,247,.86);
+    border: 1px solid rgba(232,183,200,.6);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 25px;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.shop-header {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 155px;
+    height: 155px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg, #FFF0F4, #FFF8ED);
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 7px 22px rgba(217,143,166,.20),
+        inset 0 0 0 2px var(--dusty-pink);
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-placeholder {
+    font-size: 65px;
+}
+
+/* โน้ตดนตรีมุมโลโก้ */
+.music-note {
+    position: absolute;
+
+    top: 3px;
+    right: -4px;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: var(--rose);
+    color: white;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 21px;
+
+    border: 3px solid white;
+
+    box-shadow: 0 5px 12px rgba(217,143,166,.25);
+
+    animation: noteFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes noteFloat {
+    0%,100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(8deg) translateY(-4px);
+    }
+}
+
+.shop-info {
+    flex: 1;
+}
+
+.shop-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--cocoa);
+
+    margin-bottom: 8px;
+}
+
+.shop-title span {
+    color: var(--rose);
+}
+
+.shop-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #9A8378;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.stars {
+    color: #E5AD55;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+
+.status-bar {
+    width: 100%;
+
+    border: 2px dashed #8EDFD3;
+    background: rgba(181,243,233,.28);
+
+    border-radius: 17px;
+
+    padding: 13px 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 23px;
+
+    transition: .25s ease;
+}
+
+.status-bar:hover {
+    background: rgba(181,243,233,.45);
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: grid;
+    place-items: center;
+
+    box-shadow: var(--soft-shadow);
+}
+
+.status-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.queue-count {
+    min-width: 24px;
+    height: 24px;
+
+    padding: 0 7px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--rose);
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BANNER
+   ========================================================= */
+
+.banner {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1122 / 495;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #FFE3B7,
+            #FCE5EC 50%,
+            #B5F3E9
+        );
+
+    border: 3px solid white;
+
+    box-shadow: var(--soft-shadow);
+
+    margin-bottom: 28px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255,252,247,.65),
+        rgba(255,252,247,.1)
+    );
+}
+
+.banner-content h2 {
+    font-size: 31px;
+    color: var(--cocoa);
+    margin-bottom: 5px;
+}
+
+.banner-content p {
+    color: #997F72;
+}
+
+.banner-button {
+    margin-top: 13px;
+
+    background: var(--rose);
+    color: white;
+
+    border: none;
+
+    padding: 9px 22px;
+    border-radius: 999px;
+
+    box-shadow: 0 5px 12px rgba(217,143,166,.25);
+
+    transition: .25s;
+}
+
+.banner-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TWO COLUMN
+   ========================================================= */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .85fr;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SECTION CARD
+   ========================================================= */
+
+.section-card {
+    background: rgba(255,252,247,.88);
+
+    border: 1px solid rgba(232,183,200,.55);
+
+    border-radius: var(--radius-md);
+
+    padding: 20px;
+
+    box-shadow: var(--soft-shadow);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.section-title span {
+    font-size: 13px;
+    color: #B09286;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    border-radius: 17px;
+    padding: 13px;
+
+    min-height: 145px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    transition: .25s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.gallery-item:nth-child(1) {
+    background: var(--pink-light);
+}
+
+.gallery-item:nth-child(2) {
+    background: var(--mint-light);
+}
+
+.gallery-item:nth-child(3) {
+    background: var(--peach-light);
+}
+
+.gallery-item:nth-child(4) {
+    background: #F9EDF4;
+}
+
+.gallery-item:nth-child(5) {
+    background: #EEF9F6;
+}
+
+.gallery-item:nth-child(6) {
+    background: #FFF3E4;
+}
+
+.gallery-image {
+    flex: 1;
+
+    border-radius: 13px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 45px;
+}
+
+.gallery-name {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   WORK EXAMPLES
+   ========================================================= */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.work-item {
+    aspect-ratio: 1 / .72;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #FFF0F3;
+
+    border: 2px solid white;
+
+    transition: .25s ease;
+}
+
+.work-item:hover {
+    transform: scale(1.025);
+    box-shadow: var(--soft-shadow);
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   REVIEW
+   ========================================================= */
+
+.review-box {
+    position: relative;
+
+    background: #FFF9F5;
+
+    border: 1px solid #F0D9E0;
+
+    border-radius: 20px;
+
+    padding: 17px;
+
+    margin-top: 15px;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--peach),
+            var(--dusty-pink)
+        );
+
+    display: grid;
+    place-items: center;
+
+    font-size: 20px;
+}
+
+.review-name {
+    font-size: 14px;
+}
+
+.review-date {
+    font-size: 11px;
+    color: #B19A91;
+}
+
+.review-stars {
+    margin-left: auto;
+    color: #E5AD55;
+}
+
+.review-text {
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin-top: 12px;
+
+    color: #927B70;
+}
+
+.review-button {
+    border: none;
+    background: var(--rose);
+    color: white;
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    transition: .25s;
+}
+
+.review-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    margin-top: 17px;
+}
+
+.social {
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 10px;
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: .25s;
+}
+
+.social:hover {
+    transform: translateY(-3px);
+}
+
+.facebook {
+    background: #D98FA6;
+}
+
+.line {
+    background: #79D8C9;
+}
+
+
+/* =========================================================
+   QUEUE BUTTON
+   ========================================================= */
+
+.queue-button {
+    width: 100%;
+
+    margin-top: 17px;
+
+    border: 2px dashed #E59EB5;
+
+    background: #FFF8FA;
+
+    color: var(--rose);
+
+    border-radius: 18px;
+
+    padding: 13px;
+
+    font-size: 15px;
+
+    transition: .25s;
+}
+
+.queue-button:hover {
+    background: var(--pink-light);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   COLOR GUIDE
+   ========================================================= */
+
+.color-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.color-row {
+    display: grid;
+    grid-template-columns: 38px 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 6px;
+
+    border-radius: 10px;
+}
+
+.color-swatch {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(143,117,104,.12);
+
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.4);
+}
+
+.color-name {
+    font-size: 13px;
+}
+
+.color-code {
+    font-size: 11px;
+    color: #AD958A;
+}
+
+
+/* =========================================================
+   INFO BOX
+   ========================================================= */
+
+.info-box {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 17px;
+
+    background: linear-gradient(
+        135deg,
+        #FFF2F5,
+        #FFF8E9
+    );
+
+    border: 1px solid #F0D4DD;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px 10px 0;
+
+    font-size: 12px;
+
+    color: #B49D93;
+}
+
+footer span {
+    color: var(--rose);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(92,70,61,.28);
+
+    backdrop-filter: blur(6px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 450px;
+
+    background: var(--white);
+
+    border-radius: 27px;
+
+    padding: 25px;
+
+    box-shadow: 0 20px 60px rgba(92,70,61,.2);
+
+    animation: modalIn .3s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.modal-header h3 {
+    font-size: 21px;
+}
+
+.close-modal {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: var(--pink-light);
+
+    color: var(--rose);
+
+    font-size: 18px;
+}
+
+.queue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.queue-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 14px;
+
+    background: #FFF8F4;
+
+    border-radius: 14px;
+
+    border: 1px solid #F1E0DB;
+}
+
+.queue-status {
+    font-size: 11px;
+
+    background: var(--mint-light);
+
+    color: #62B9AB;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(80px);
+
+    background: var(--cocoa);
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transition: .3s ease;
+
+    z-index: 200;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    #app {
+        padding: 12px 10px 30px;
+    }
+
+    .main-card {
+        padding: 16px;
+        border-radius: 23px;
+    }
+
+    .shop-header {
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 115px;
+        height: 115px;
+    }
+
+    .logo-placeholder {
+        font-size: 48px;
+    }
+
+    .shop-title {
+        font-size: 26px;
+    }
+
+    .shop-description {
+        font-size: 13px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-content h2 {
+        font-size: 23px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .top-row {
+        margin-bottom: 10px;
+    }
+
+    .badge {
+        width: 35px;
+        height: 35px;
+    }
+
+    .admin-button {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .shop-header {
+        gap: 14px;
+    }
+
+    .logo {
+        width: 92px;
+        height: 92px;
+    }
+
+    .music-note {
+        width: 31px;
+        height: 31px;
+        font-size: 15px;
+    }
+
+    .logo-placeholder {
+        font-size: 38px;
+    }
+
+    .shop-title {
+        font-size: 22px;
+    }
+
+    .shop-description {
+        font-size: 11px;
+        line-height: 1.65;
+    }
+
+    .rating {
+        font-size: 11px;
+    }
+
+    .status-bar {
+        padding: 10px;
+    }
+
+    .status-title {
+        font-size: 12px;
+    }
+
+    .banner {
+        border-radius: 18px;
+    }
+
+    .banner-content h2 {
+        font-size: 18px;
+    }
+
+    .banner-content p {
+        font-size: 11px;
+    }
+
+    .banner-button {
+        font-size: 11px;
+        padding: 7px 14px;
+    }
+
+    .section-card {
+        padding: 14px;
+    }
+
+    .section-title h2 {
+        font-size: 17px;
+    }
+
+    .gallery-grid {
+        gap: 7px;
+    }
+
+    .gallery-item {
+        min-height: 110px;
+        padding: 8px;
+    }
+
+    .gallery-image {
+        font-size: 30px;
+    }
+
+    .gallery-name {
+        font-size: 11px;
+    }
+
+    .work-grid {
+        gap: 7px;
+    }
+
+    .social-buttons {
+        gap: 7px;
+    }
+}
+
+
+/* =========================================================
+   FLOATING DECORATION
+   ========================================================= */
+
+.decor {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: .7;
+
+    animation: floatDecor 5s ease-in-out infinite;
+}
+
+.decor.one {
+    top: 13%;
+    left: 4%;
+    font-size: 24px;
+}
+
+.decor.two {
+    top: 35%;
+    right: 4%;
+    font-size: 20px;
+    animation-delay: 1s;
+}
+
+.decor.three {
+    bottom: 15%;
+    left: 6%;
+    font-size: 18px;
+    animation-delay: 2s;
+}
+
+@keyframes floatDecor {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(7deg);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- Floating Decorations -->
+<div class="decor one">✦</div>
+<div class="decor two">♡</div>
+<div class="decor three">✧</div>
+
+
+<div id="app">
+
+    <!-- =====================================================
+         TOP BADGES
+         ===================================================== -->
+
+    <div class="top-row">
+
+        <div class="badges">
+
+            <button class="badge" title="Music">
+                ♪
+            </button>
+
+            <button class="badge" title="Shop">
+                ♡
+            </button>
+
+            <button class="badge" title="Mint">
+                ✦
+            </button>
+
+        </div>
+
+        <button class="admin-button" onclick="showToast('ส่วนผู้ดูแลระบบ')">
+            ผู้ดูแลระบบ
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main-card">
+
+
+        <!-- SHOP HEADER -->
+
+        <header class="shop-header">
+
+            <div class="logo-wrap">
+
+                <div class="logo">
+
+                    <!-- เปลี่ยน src ตรงนี้เป็นโลโก้ร้าน -->
+                    <!--
+                    <img src="YOUR-LOGO-URL" alt="Miori Logo">
+                    -->
+
+                    <div class="logo-placeholder">
+                        🎀
+                    </div>
+
+                </div>
+
+                <div class="music-note">
+                    ♪
+                </div>
+
+            </div>
+
+
+            <div class="shop-info">
+
+                <h1 class="shop-title">
+                    Miori <span>🎀</span>
+                </h1>
+
+                <p class="shop-description">
+                    ร้านมิโอริ ยินดีต้อนรับค่า ♡<br>
+                    บริการรับทำเว็บไซต์ร้านค้า<br>
+                    รับทำลายน้ำเริ่มต้น 39+<br>
+                    รับทำป้ายเริ่มต้น 59+<br>
+                    สอบถามรายละเอียดเพิ่มเติมทักได้เลยน้า
+                </p>
+
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>5.0 (128 รีวิว)</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             STATUS BAR
+             ================================================= -->
+
+        <div class="status-bar">
+
+            <div class="status-left">
+
+                <div class="status-icon">
+                    📋
+                </div>
+
+                <span class="status-title">
+                    เช็คคิวงานปัจจุบัน
+                </span>
+
+                <span class="queue-count">
+                    3
+                </span>
+
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+        <!-- =================================================
+             BANNER
+             ================================================= -->
+
+        <section class="banner">
+
+            <!-- ใส่รูป Banner จริงตรงนี้ได้ -->
+            <!--
+            <img src="YOUR-BANNER-URL" alt="Miori Banner">
+            -->
+
+            <div class="banner-content">
+
+                <h2>
+                    Miori Shop 🎀
+                </h2>
+
+                <p>
+                    รับทำเว็บไซต์ • ป้าย • ลายน้ำ
+                </p>
+
+                <button
+                    class="banner-button"
+                    onclick="showToast('ขอบคุณที่สนใจ Miori Shop ♡')"
+                >
+                    ดูผลงานของเรา →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <div class="content-grid">
+
+
+            <!-- LEFT COLUMN -->
+
+            <div>
+
+
+                <!-- GALLERY -->
+
+                <section class="section-card">
+
+                    <div class="section-title">
+
+                        <h2>
+                            Gallery
+                            <span>[ Block / Toon / Descor ]</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="gallery-grid">
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                🎀
+                            </div>
+
+                            <div class="gallery-name">
+                                Block
+                            </div>
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                🐰
+                            </div>
+
+                            <div class="gallery-name">
+                                Toon
+                            </div>
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                ⭐
+                            </div>
+
+                            <div class="gallery-name">
+                                Descor
+                            </div>
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                🌷
+                            </div>
+
+                            <div class="gallery-name">
+                                Pastel
+                            </div>
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                🧸
+                            </div>
+
+                            <div class="gallery-name">
+                                Cute
+                            </div>
+
+                        </div>
+
+
+                        <div class="gallery-item">
+
+                            <div class="gallery-image">
+                                ✨
+                            </div>
+
+                            <div class="gallery-name">
+                                Minimal
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- WORK EXAMPLES -->
+
+                <section
+                    class="section-card"
+                    style="margin-top:18px;"
+                >
+
+                    <div class="section-title">
+
+                        <h2>
+                            ตัวอย่างงาน
+                        </h2>
+
+                        <span>
+                            ดูทั้งหมด →
+                        </span>
+
+                    </div>
+
+
+                    <div class="work-grid">
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/FFE3B7/8F7568?text=Miori+01"
+                                alt="ตัวอย่างงาน 1"
+                            >
+                        </div>
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/B5F3E9/8F7568?text=Miori+02"
+                                alt="ตัวอย่างงาน 2"
+                            >
+                        </div>
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/E8B7C8/8F7568?text=Miori+03"
+                                alt="ตัวอย่างงาน 3"
+                            >
+                        </div>
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/FFF6D3/8F7568?text=Miori+04"
+                                alt="ตัวอย่างงาน 4"
+                            >
+                        </div>
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/D98FA6/FFFFFF?text=Miori+05"
+                                alt="ตัวอย่างงาน 5"
+                            >
+                        </div>
+
+
+                        <div class="work-item">
+                            <img
+                                src="https://placehold.co/600x400/FFFCF7/8F7568?text=Miori+06"
+                                alt="ตัวอย่างงาน 6"
+                            >
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- REVIEW -->
+
+                <section
+                    class="section-card"
+                    style="margin-top:18px;"
+                >
+
+                    <div class="section-title">
+
+                        <h2>
+                            รีวิวจากลูกค้า ♡
+                        </h2>
+
+                        <button
+                            class="review-button"
+                            onclick="showToast('เปิดแบบฟอร์มเขียนรีวิว')"
+                        >
+                            ✎ เขียนรีวิว
+                        </button>
+
+                    </div>
+
+
+                    <div class="review-box">
+
+                        <div class="review-user">
+
+                            <div class="avatar">
+                                🐰
+                            </div>
+
+                            <div>
+
+                                <div class="review-name">
+                                    ลูกค้าคนสวย ♡
+                                </div>
+
+                                <div class="review-date">
+                                    12 ก.ย. 2568
+                                </div>
+
+                            </div>
+
+                            <div class="review-stars">
+                                ★★★★★
+                            </div>
+
+                        </div>
+
+
+                        <p class="review-text">
+                            งานน่ารักมากกก บริการดีมากเลยค่ะ
+                            ไว้จะมาใช้บริการอีกแน่นอน! 💕
+                        </p>
+
+                    </div>
+
+
+                    <div class="social-buttons">
+
+                        <button
+                            class="social facebook"
+                            onclick="showToast('เปิด Facebook')"
+                        >
+                            ● Facebook
+                        </button>
+
+                        <button
+                            class="social line"
+                            onclick="showToast('เปิด LINE')"
+                        >
+                            LINE
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="queue-button"
+                        onclick="openQueue()"
+                    >
+                        📋 เช็คคิวงานปัจจุบัน
+                        <span class="queue-count">3</span>
+                        →
+                    </button>
+
+                </section>
+
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+
+            <div>
+
+
+                <!-- COLOR GUIDE -->
+
+                <section class="section-card">
+
+                    <div class="section-title">
+
+                        <h2>
+                            🎨 โทนสีโดยรวม
+                        </h2>
+
+                    </div>
+
+
+                    <div class="color-guide">
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#FFE3B7;"
+                            ></div>
+
+                            <div class="color-name">
+                                Peach Milk
+                            </div>
+
+                            <div class="color-code">
+                                #FFE3B7
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#FFF6D3;"
+                            ></div>
+
+                            <div class="color-name">
+                                Vanilla Cream
+                            </div>
+
+                            <div class="color-code">
+                                #FFF6D3
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#B5F3E9;"
+                            ></div>
+
+                            <div class="color-name">
+                                Mint Cream
+                            </div>
+
+                            <div class="color-code">
+                                #B5F3E9
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#E8B7C8;"
+                            ></div>
+
+                            <div class="color-name">
+                                Dusty Pink
+                            </div>
+
+                            <div class="color-code">
+                                #E8B7C8
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#D98FA6;"
+                            ></div>
+
+                            <div class="color-name">
+                                Soft Rose
+                            </div>
+
+                            <div class="color-code">
+                                #D98FA6
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#8F7568;"
+                            ></div>
+
+                            <div class="color-name">
+                                Milk Cocoa
+                            </div>
+
+                            <div class="color-code">
+                                #8F7568
+                            </div>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+                            <div
+                                class="color-swatch"
+                                style="background:#FFFCF7;"
+                            ></div>
+
+                            <div class="color-name">
+                                Warm White
+                            </div>
+
+                            <div class="color-code">
+                                #FFFCF7
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- COLOR USAGE -->
+
+                <section
+                    class="section-card"
+                    style="margin-top:18px;"
+                >
+
+                    <div class="section-title">
+
+                        <h2>
+                            ♡ ตัวอย่างการใช้งานสี
+                        </h2>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <p>
+                            🧈 <b>พื้นหลังหลัก</b>
+                            — #FFF6D3
+                        </p>
+
+                        <p>
+                            🤍 <b>การ์ด / พื้นที่ว่าง</b>
+                            — #FFFCF7
+                        </p>
+
+                        <p>
+                            🌷 <b>ปุ่มหลัก</b>
+                            — #D98FA6
+                        </p>
+
+                        <p>
+                            🫧 <b>ปุ่มรอง</b>
+                            — #B5F3E9
+                        </p>
+
+                        <p>
+                            🍑 <b>กล่องโปรโมชั่น</b>
+                            — #FFE3B7
+                        </p>
+
+                        <p>
+                            🌸 <b>หัวข้อ / เส้นขอบ</b>
+                            — #E8B7C8
+                        </p>
+
+                        <p>
+                            ☕ <b>ตัวหนังสือหลัก</b>
+                            — #8F7568
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EXTRA NOTE -->
+
+                <section
+                    class="section-card"
+                    style="margin-top:18px;"
+                >
+
+                    <div class="section-title">
+
+                        <h2>
+                            💕 เคล็ดลับเพิ่มเติม
+                        </h2>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <p>
+                            • อย่าใช้สีอ่อนมากเป็นตัวหนังสือ
+                            เพราะอ่านยาก
+                        </p>
+
+                        <p>
+                            • ใช้ #8F7568 เป็นสีข้อความหลัก
+                            จะอ่านง่ายและยังคงความละมุน
+                        </p>
+
+                        <p>
+                            • ใช้สีชมพูตุ่นเป็นจุดเด่น
+                            เพื่อให้เว็บดูน่ารักโดยไม่หวานเกินไป
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            ♡ miori shop © 2026 ♡
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     QUEUE MODAL
+     ========================================================= -->
+
+<div
+    class="modal"
+    id="queueModal"
+    onclick="closeQueueOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h3>
+                📋 คิวงานปัจจุบัน
+            </h3>
+
+            <button
+                class="close-modal"
+                onclick="closeQueue()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="queue-list">
+
+            <div class="queue-item">
+
+                <div>
+                    <b>#001</b><br>
+                    <small>ออกแบบป้ายร้าน</small>
+                </div>
+
+                <span class="queue-status">
+                    กำลังทำ
+                </span>
+
+            </div>
+
+
+            <div class="queue-item">
+
+                <div>
+                    <b>#002</b><br>
+                    <small>ออกแบบลายน้ำ</small>
+                </div>
+
+                <span class="queue-status">
+                    รอคิว
+                </span>
+
+            </div>
+
+
+            <div class="queue-item">
+
+                <div>
+                    <b>#003</b><br>
+                    <small>ออกแบบเว็บไซต์</small>
+                </div>
+
+                <span class="queue-status">
+                    รอคิว
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    สำเร็จ ♡
+</div>
+
+
+<script>
+
+/* =========================================================
+   QUEUE MODAL
+   ========================================================= */
+
+function openQueue() {
+
+    document
+        .getElementById("queueModal")
+        .classList
+        .add("active");
+
+}
+
+
+function closeQueue() {
+
+    document
+        .getElementById("queueModal")
+        .classList
+        .remove("active");
+
+}
+
+
+function closeQueueOutside(event) {
+
+    if (event.target.id === "queueModal") {
+        closeQueue();
+    }
+
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+let toastTimer;
+
+function showToast(message) {
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2200);
+
+}
+
+
+/* =========================================================
+   ESC TO CLOSE MODAL
+   ========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeQueue();
+
+    }
+
+});
+
+
+/* =========================================================
+   SIMPLE SCROLL REVEAL
+   ========================================================= */
+
+const cards =
+    document.querySelectorAll(".section-card");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .08
+        }
+    );
+
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(12px)";
+    card.style.transition =
+        "opacity .6s ease, transform .6s ease";
+
+    observer.observe(card);
+
+});
+
+
+</script>
+
+</body>
+</html>
